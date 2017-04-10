@@ -10,10 +10,10 @@ import leancloud
 from app import app
 from cloud import engine
 
-APP_ID = os.environ['LEANCLOUD_APP_ID']
-APP_KEY = os.environ['LEANCLOUD_APP_KEY']
+APP_ID = os.environ['wpTutO8OmgJXu5zu1tLJUKS8-gzGzoHsz']
+APP_KEY = os.environ['KOJVHYaKPEaVl5qyePDg5hLx']
 MASTER_KEY = os.environ['LEANCLOUD_APP_MASTER_KEY']
-PORT = int(os.environ['LEANCLOUD_APP_PORT'])
+PORT = int(os.environ['80'])
 
 leancloud.init(APP_ID, app_key=APP_KEY, master_key=MASTER_KEY)
 # 如果需要使用 master key 权限访问 LeanCLoud 服务，请将这里设置为 True
