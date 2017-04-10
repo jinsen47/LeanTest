@@ -1,8 +1,10 @@
 # coding: utf-8
-
+import json
 from datetime import datetime
 
-from flask import Flask
+import leancloud
+import requests
+from flask import Flask, request, Response
 from flask import render_template
 from flask_sockets import Sockets
 
@@ -23,6 +25,13 @@ def index():
 @app.route('/time')
 def time():
     return str(datetime.now())
+
+
+@app.route('/gank/<category>/<page>')
+def gank(category, page):
+    url = 'http://gank.io/api/search/query/listview/category/%s/count/5/page/%s' % (category, page)
+    requestAPI = requests.get(url)
+    return Response(json.dumps(requestAPI.json()), mimetype='application/json')
 
 
 @sockets.route('/echo')

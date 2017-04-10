@@ -1,1 +1,7 @@
 .idea/
+*.pyc
+/views/*.pyc
+__pycache__/
+/views/__pycache__/
+.leancloud/
+/venv/
